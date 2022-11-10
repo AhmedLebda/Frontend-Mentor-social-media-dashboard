@@ -1,0 +1,356 @@
+/* Import Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+:root {
+  /* Font Inter 400-700 */
+  --font-inter: "Inter", sans-serif;
+  /* Increase | Decrease  Colors*/
+
+  --increase: hsl(163, 72%, 41%);
+  --decrease: hsl(356, 69%, 56%);
+
+  /* box border colors */
+
+  --facebook-border-color: hsl(208, 92%, 53%);
+  --twitter-border-color: hsl(203, 89%, 53%);
+  --instagram-border-color: linear-gradient(
+    to right,
+    hsl(37, 97%, 70%),
+    hsl(329, 70%, 58%)
+  );
+  --youtube-border-color: hsl(348, 97%, 39%);
+
+  /* Toggle Colors */
+
+  --toggle-dark-color: linear-gradient(
+    to right,
+    hsl(210, 78%, 56%),
+    hsl(146, 68%, 55%)
+  );
+  --toggle-light-color: hsl(230, 22%, 74%);
+
+  /* ==========> Theme Colors <========== */
+
+  /* Dark Theme Colors*/
+
+  --page-bg-dt: hsl(230, 17%, 14%);
+  --top-bg-pattern-dt: hsl(232, 19%, 15%);
+  --card-background-dt: hsl(228, 28%, 20%);
+  --text-color-primary-dt: hsl(0, 0%, 100%);
+  --text-color-secondry-dt: hsl(228, 34%, 66%);
+
+  /* Light Theme Colors*/
+
+  --page-bg-lt: hsl(0, 0%, 100%);
+  --top-bg-pattern-lt: hsl(225, 100%, 98%);
+  --card-background-lt: hsl(227, 47%, 96%);
+  --text-color-primary-lt: hsl(230, 17%, 14%);
+  --text-color-secondry-lt: hsl(228, 12%, 44%);
+}
+
+/* ==========> Toggle Button Component <========== */
+
+input.toggle-btn {
+  display: none;
+}
+input.toggle-btn + label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+
+  color: var(--text-color-secondry-lt);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+input.toggle-btn + label::after {
+  content: "";
+  background-color: var(--toggle-light-color);
+  width: 3rem;
+  height: 1.5rem;
+  border-radius: 1rem;
+  transition: 0.25s;
+}
+input.toggle-btn + label::before {
+  content: "";
+  background-color: white;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  position: absolute;
+  right: 0.3rem;
+  transition: 0.25s;
+}
+input.toggle-btn:checked + label {
+  color: var(--text-color-secondry-dt);
+}
+input.toggle-btn:checked + label::before {
+  right: 1.6rem;
+  background-color: var(--page-bg-dt);
+}
+input.toggle-btn:checked + label::after {
+  background: var(--toggle-dark-color);
+}
+
+/* ==========> General Styles <========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+a,
+button,
+input,
+img {
+  display: block;
+  text-decoration: none;
+  font-family: var(--font-inter);
+}
+
+body {
+  font-family: var(--font-inter);
+  min-height: 100vh;
+  background-color: var(--page-bg-lt);
+}
+.pattern {
+  background-color: var(--top-bg-pattern-lt);
+  height: 20rem;
+}
+main {
+  max-width: 90vw;
+  margin: 2rem auto;
+  margin-top: -17rem;
+}
+
+/* ==========> Dashboard Styles <========== */
+.dashboard {
+  margin-bottom: 3rem;
+}
+.dashboard-header {
+  margin-bottom: 2.5rem;
+  background-size: 500px;
+  /* background-color: var(--top-bg-pattern-lt); */
+}
+.total-followers-wrapper {
+  padding: 0 0 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--text-color-secondry-lt);
+}
+.total-followers-wrapper h1 {
+  color: var(--text-color-primary-lt);
+  font-weight: 700;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+.total-followers-wrapper .total-followers {
+  color: var(--text-color-secondry-lt);
+  font-weight: 700;
+}
+
+/* Dashboard Social Boxes */
+.dashboard-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 2rem;
+}
+.dashboard-content .box {
+  background-color: var(--card-background-lt);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  border-radius: 0.3rem;
+  position: relative;
+}
+.dashboard-content .box:hover {
+  cursor: pointer;
+  background-color: hsl(227, 47%, 94%);
+}
+.dashboard-content .box .title {
+  display: flex;
+  gap: 0.5rem;
+}
+.dashboard-content .box .title .user-acc {
+  color: var(--text-color-secondry-lt);
+  font-weight: 700;
+}
+
+/* Box Content */
+.dashboard-content .box .box-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.dashboard-content .box .followers {
+  font-size: 4rem;
+  color: var(--text-color-primary-lt);
+}
+.dashboard-content .box .box-content p {
+  color: var(--text-color-secondry-lt);
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+}
+
+/* Box Footer */
+.dashboard-content .box .box-footer .timeframe {
+  position: relative;
+  font-weight: 700;
+}
+.dashboard-content .box .box-footer .timeframe.timeframe.increase {
+  color: var(--increase);
+}
+.dashboard-content .box .box-footer .timeframe.timeframe.decrease {
+  color: var(--decrease);
+}
+.dashboard-content .box .box-footer .timeframe.increase::before {
+  content: url(../images/icon-up.svg);
+  display: block;
+  transform: scale(1.5);
+  position: absolute;
+  left: -1rem;
+  top: -30%;
+}
+.dashboard-content .box .box-footer .timeframe.decrease::before {
+  content: url(../images/icon-down.svg);
+  display: block;
+  transform: scale(1.5);
+  position: absolute;
+  left: -1rem;
+  top: -30%;
+}
+
+/* Social Box Borders */
+.box.facebook {
+  border-top: 5px solid var(--facebook-border-color);
+}
+.box.twitter {
+  border-top: 5px solid var(--twitter-border-color);
+}
+.box.instagram:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: var(--instagram-border-color);
+  border-radius: 0.2rem 0.2rem 0 0;
+}
+.box.youtube {
+  border-top: 5px solid var(--youtube-border-color);
+}
+/* ==========> Desktop Dashboard Styles <========== */
+@media screen and (min-width: 800px) {
+  main {
+    width: 80vw;
+  }
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .dashboard-header h1 {
+    font-size: 2rem;
+  }
+  .total-followers-wrapper {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+    border-bottom: none;
+  }
+  .themes {
+    width: 150px;
+  }
+  .overview > h2 {
+    font-size: 1.7;
+  }
+}
+
+/* ==========> Overview Styles <========== */
+.overview > h2 {
+  color: var(--text-color-secondry-lt);
+  margin-bottom: 2.5rem;
+  font-size: 1.5rem;
+}
+.overview-content-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+.overview-box {
+  background-color: var(--card-background-lt);
+  padding: 2rem;
+  border-radius: 0.5rem;
+}
+.overview-box:hover {
+  cursor: pointer;
+  background-color: hsl(227, 47%, 94%);
+}
+.overview-box > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.box-header {
+  margin-bottom: 2rem;
+  color: var(--text-color-secondry-lt);
+  font-size: 0.9rem;
+}
+.box-data {
+  color: var(--text-color-primary-lt);
+}
+.box-data h3 {
+  font-size: 2.5rem;
+}
+.box-data h4 {
+  position: relative;
+}
+.box-data h4.increase::before {
+  content: url(../images/icon-up.svg);
+  display: block;
+  transform: scale(1.5);
+  position: absolute;
+  left: -1rem;
+  top: -30%;
+}
+.box-data h4.decrease::before {
+  content: url(../images/icon-down.svg);
+  display: block;
+  transform: scale(1.5);
+  position: absolute;
+  left: -1rem;
+  top: -30%;
+}
+.box-data h4.increase {
+  color: var(--increase);
+}
+.box-data h4.decrease {
+  color: var(--decrease);
+}
+
+/* Dark Theme Styles */
+
+.pattern-dm {
+  background-color: var(--top-bg-pattern-dt) !important;
+}
+.page-dm {
+  background-color: var(--page-bg-dt) !important;
+}
+.text-primary-dm {
+  color: var(--text-color-primary-dt) !important;
+}
+.text-secondry-dm {
+  color: var(--text-color-secondry-dt) !important;
+}
+.card-bg-dm {
+  background-color: var(--card-background-dt) !important;
+}
+.card-bg-dm:hover {
+  background-color: hsl(228, 28%, 25%) !important;
+}
