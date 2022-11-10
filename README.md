@@ -44,4 +44,4 @@ Users should be able to:
 ## Author
 
 - Github - [Ahmed Lebda](https://github.com/AhmedLebda)
-- Frontend Mentor - [Ahmed Lebda] (https://www.frontendmentor.io/profile/AhmedLebda)
+- Frontend Mentor - [Ahmed Lebda](https://www.frontendmentor.io/profile/AhmedLebda)
