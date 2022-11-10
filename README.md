@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/solutions/tip-calculator-app-nGctaFa9E0)
-- Live Site URL: [live site URL](https://ahmedlebda.github.io/frontend-Mentor-tip-calculator/)
+- Solution URL: [solution URL](https://www.frontendmentor.io/challenges/social-media-dashboard-with-theme-switcher-6oY8ozp_H/hub/social-media-dashboard-with-theme-switcher-OacCYIIxwU)
+- Live Site URL: [live site URL](https://ahmedlebda.github.io/Frontend-Mentor-social-media-dashboard/)
 
 ## Built with
 
